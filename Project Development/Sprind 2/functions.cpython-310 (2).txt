@@ -1,0 +1,16 @@
+o
+    pfgcè  ã                   @   sB   d dl Z d dlmZmZmZmZ d dlmZ d	dd„Zdd„ Z	dS )
+é    N)ÚredirectÚrender_templateÚrequestÚsession©Úwrapsé  c                 C   s   dd„ }t d||| ƒd|fS )z%Render message as an apology to user.c                 S   s   dD ]
+\}}|   ||¡} q| S )zp
+        Escape special characters.
+
+        https://github.com/jacebrowning/memegen#special-characters
+        ))ú-z--)ú r	   )Ú_Ú__)ú?z~q)ú%z~p)ú#z~h)ú/z~s)ú"z'')Úreplace)ÚsÚoldÚnew© r   ú\C:\Users\dell\Documents\GitHub 4\IBM-Project-22086-1659803552\Project-Inventory\functions.pyÚescape   s   zapology.<locals>.escapezapology.html)ÚtopÚbottom)r   )ÚmessageÚcoder   r   r   r   Úapology   s   
+r   c                    s   t ˆ ƒ‡ fdd„ƒ}|S )zi
+    Decorate routes to require login.
+
+    http://flask.pocoo.org/docs/1.0/patterns/viewdecorators/
+    c                     s$   t  d¡d u rtdƒS ˆ | i |¤S )NÚuser_idz/login)r   Úgetr   )ÚargsÚkwargs©Úfr   r   Údecorated_function   s   z*login_required.<locals>.decorated_functionr   )r#   r$   r   r"   r   Úlogin_required   s   r%   )r   )
+ZrequestsÚflaskr   r   r   r   Ú	functoolsr   r   r%   r   r   r   r   Ú<module>   s
+    
+
